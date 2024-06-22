@@ -1,0 +1,7 @@
+[package]
+name = "four_brown_tracking"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+opencv = "0.91.3"
