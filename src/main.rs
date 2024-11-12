@@ -11,8 +11,6 @@ use opencv::{
 };
 
 fn main() -> opencv::Result<()> {
-    let window = "video capture";
-    highgui::named_window(window, highgui::WINDOW_AUTOSIZE)?;
     let mut cam = videoio::VideoCapture::new(0, videoio::CAP_ANY)?;
     let opened = videoio::VideoCapture::is_opened(&cam)?;
     if !opened {
