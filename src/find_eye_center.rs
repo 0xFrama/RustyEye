@@ -55,6 +55,7 @@ pub fn find_eye_center(gray_frame: &Mat, eye: &core::Rect) -> opencv::Result<cor
         0.,
         0.,
         core::BORDER_DEFAULT,
+        core::AlgorithmHint::ALGO_HINT_DEFAULT,
     )?;
 
     for row in 0..weight.rows() {

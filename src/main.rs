@@ -25,7 +25,13 @@ fn main() -> opencv::Result<()> {
         let mut frame = Mat::default();
         cam.read(&mut frame)?;
         let mut gray = Mat::default();
-        imgproc::cvt_color(&frame, &mut gray, imgproc::COLOR_BGR2GRAY, 0);
+        imgproc::cvt_color(
+            &frame,
+            &mut gray,
+            imgproc::COLOR_BGR2GRAY,
+            0,
+            core::AlgorithmHint::ALGO_HINT_DEFAULT,
+        );
         let mut faces = types::VectorOfRect::new();
 
         face_detector.detect_multi_scale(
@@ -49,6 +55,7 @@ fn main() -> opencv::Result<()> {
                         sigma,
                         sigma,
                         core::BORDER_DEFAULT,
+                        core::AlgorithmHint::ALGO_HINT_DEFAULT,
                     )?;
                 }
 
