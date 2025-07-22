@@ -5,4 +5,5 @@ This project is a reimplementation of [eyeLike](https://github.com/trishume/eyeL
 Once you have downloaded the repository:
 ```
 cd RustyEye
+cargo build
 cargo run
